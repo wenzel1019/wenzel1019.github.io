@@ -1,3 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>wenzel1019's site</title>
+  <style>
+    /* Global styles */
+/* Initial body styles */
+  body {
+  background-color: #f3f3f3;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  transition: background-color 0.5s ease; /* Add transition property */
+}
+
+    /* Header styles */
+    header {
+      background-color: #0078d4;
+      color: #fff;
+      padding: 10px 20px;
+      width: 100%;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 0 0 10px 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 24px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* Navigation styles */
+    nav {
+      display: flex;
+      align-items: center;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    nav li {
+      margin: 0 10px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Active tab styles */
+    nav a.active {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    /* Dark mode toggle styles */
+    .dark-mode-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      align-items: center;
+      background-color: #0078d4;
+      padding: 10px;
+      border-radius: 25px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .dark-mode-toggle label {
+      margin-left: 10px;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 40px;
+      height: 20px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: 0.4s;
+      border-radius: 20px;
+      border: 2px solid #fff;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 12px;
+      width: 12px;
+      left: 4px;
+      top: 2px; /* Center the circle vertically */
+      background-color: white;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: #0078d4;
+      border: 2px solid #0078d4;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(20px);
+      background-color: white; /* Ensuring the toggle remains white */
+    }
+
+    /* Dark mode styles */
+    .dark {
+      background-color: #252525;
+      color: #e1e1e1;
+    }
+
+    .dark header {
+      background-color: #1f1f1f;
+      color: #e1e1e1;
+    }
+
+    .dark nav a {
+      color: #e1e1e1;
+    }
+
+    .dark nav a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .dark nav a.active {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .dark .video-container {
+      background-color: #333;
+      color: #e1e1e1;
+    }
+
+    .dark .dark-mode-toggle {
+      background-color: #1f1f1f;
+    }
+
+    .dark .slider {
+      background-color: #555;
+      border: 2px solid #e1e1e1;
+    }
+
+    input:checked + .slider {
+      background-color: #0078d4;
+      border: 2px solid #0078d4;
+    }
+
+    .dark input:checked + .slider {
+      background-color: #0078d4;
+      border: 2px solid #0078d4;
+    }
+
+    .dark input:checked + .slider:before {
+      transform: translateX(20px);
+      background-color: white; /* Ensuring the toggle remains white in dark mode */
+    }
+
+    /* YouTube video container styles */
+    .video-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 50px 0;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .video-container h2 {
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    .video-container iframe {
+      border-radius: 10px;
+      border: none;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    /* Fluent design shadow effects */
+    .card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin: 20px;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+  <script>
 // Function to set dark mode based on class on body
 function setDarkModeToggleState() {
   const body = document.body;
@@ -27,3 +261,48 @@ document.addEventListener('visibilitychange', function() {
     setDarkModeToggleState(); // Update toggle state when returning to the page
   }
 });
+  </script>
+</head>
+<body>
+  <header>
+    <h1>wenzel1019's site</h1>
+<nav>
+  <ul>
+    <li><a href="#" class="active">Website</a></li>
+    <li><a href="https://youtube.com/@wenzel1019">YouTube Channel</a></li>
+    <li><a href="https://tiktok.com/@wenzel1019">TikTok Page</a></li>
+    <li><a href="https://wenzel1019.blogspot.com/2022/12/minecraft-server-ip.html?m=1">Minecraft Server</a></li>
+    <li><a href="https://wenzel1019.blogspot.com">My Blog!</a></li>
+    <li><a href="https://wenzel1019.github.io/numberdictionary">Number Dictionary</a></li>
+  </ul>
+</nav>
+  </header>
+  
+    <h2>Videos by me that I like</h2>
+    <div class="video-container">
+  <h2>Inanimate Insanity Cursed Intro</h2>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/7DNCZMmnN-s" allowfullscreen></iframe>
+
+  <h2>Battle for B.F.B. intro with old branding and faces (BUGS)</h2>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/rTRJj0e6UZ0" allowfullscreen></iframe>
+
+  <h2>YOYLECAKE - Famous 600K [Monstercat Fanmade]</h2>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/ipAdCu6ObvQ" allowfullscreen></iframe>
+
+  <h2>Battle for B.F.D.I. Cursed Intro</h2>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/Obg6ZFFxWnA" allowfullscreen></iframe>
+
+  <h2>[GD Showcase] Back On Track by @RobTop</h2>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/1eQeuQxKsVQ" allowfullscreen></iframe>
+</div>
+  </div>
+
+  <div class="dark-mode-toggle">
+    <label for="darkModeToggle">Dark Mode</label>
+    <label class="switch">
+      <input type="checkbox" id="darkModeToggle" onclick="toggleDarkMode()">
+      <span class="slider"></span>
+    </label>
+  </div>
+</body>
+</html>
