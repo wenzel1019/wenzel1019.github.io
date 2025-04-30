@@ -1,6 +1,12 @@
+@font-face {
+ font-family:'shag-lounge';
+ src: url('Shag-Lounge.otf')
+format('truetype');
+}
+
 body {
   background-color: #04C2DC;
-  font-family: sans-serif;
+  font-family: shag-lounge;
   text-align: center;
   padding: 50px;
 }
