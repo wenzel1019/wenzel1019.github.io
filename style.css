@@ -1,0 +1,19 @@
+body {
+  background-color: #04C2DC;
+  font-family: sans-serif;
+  text-align: center;
+  padding: 50px;
+}
+
+a {
+  padding: 10px 5px;
+  margin: 5px;
+  background-color: #8AE9F6;
+  color: black;
+  text-decoration: none;
+  border-radius: 50px;
+}
+
+a:hover {
+  background-color: #078B9C;
+}
