@@ -23,3 +23,13 @@ a {
 a:hover {
   background-color: #078B9C;
 }
+
+[id^="tab"] {
+  display: none;
+}
+
+#home:checked ~ #tab-home,
+#socials:checked ~ #tab-socials,
+#projects:checked ~ #tab-projects {
+  display: block;
+}
