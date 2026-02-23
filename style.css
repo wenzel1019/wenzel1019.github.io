@@ -1,7 +1,10 @@
-@font-face {
- font-family:'***REMOVED***';
- src: url('***REMOVED***.otf')
-format('truetype');
+.roboto-<uniquifier> {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
 }
 
 body {
@@ -33,3 +36,4 @@ a:hover {
 #projects:checked ~ #tab-projects {
   display: block;
 }
+
