@@ -6,5 +6,7 @@ Note that I had a different website before this, but that repository has since b
 
 So yeah... enjoy :)
 
+# Information
 Font used in logo: Shag Lounge
+
 Font used in website: Roboto
